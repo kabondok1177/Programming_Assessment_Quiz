@@ -18,16 +18,13 @@ def instructions():
     print("**** Welcome to the Geometry Quiz ****")
     print()
     print("For each game you will be asked...")
-    print("- What level you would like to play? \n"
-          " 'Easy, Medium or Hard'. \n"
-          " Computer will generate a question from the level of your choice. \n"
-          " You will get 5 questions \n"
-          " after you answer all 5 of your questions, computer will mark your answers \n"
+    print("- What question format would you like to do \n"
+          " '***Angles on a straight line or Angles in a triangle.***' \n"
+          " Computer will generate 4 geometry questions from the level of your choice. \n"
+          " After you answer all 4 of your questions, the computer will mark your answers, \n"
           " you will then be given your quiz results.")
     print("The computer will calculate how many guesses you are allowed")
-    print("enter the number of rounds you want to play")
-    print("guess the secret number")
-    print()
+    print(" If you would like to end the game before the end of your turn please enter xxx")
     print("*** Good Luck! :)  ***")
     print()
     return ""
@@ -40,3 +37,4 @@ if played_before == "no":
     instructions()
 
     print("Program continues")
+    
