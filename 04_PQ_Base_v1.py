@@ -20,8 +20,8 @@ def instructions():
     print("For each game you will be asked...")
     print("- What question format would you like to do \n"
           " '***Angles on a straight line or Angles in a triangle.***' \n"
-          " Computer will generate 4 geometry questions from the question format of your choice. \n"
-          " After you answer all 4 of your questions, the computer will mark your answers, \n"
+          " Computer will generate geometry questions from the question format of your choice. \n"
+          " After you answer all of your questions, the computer will mark your answers, \n"
           " you will then be given your quiz results.")
     print(" If you would like to end the game before the end of your turn please enter xxx")
     print("*** Good Luck! :)  ***")
@@ -37,4 +37,3 @@ if played_before == "no":
     instructions()
 
     print("Program continues")
-    
