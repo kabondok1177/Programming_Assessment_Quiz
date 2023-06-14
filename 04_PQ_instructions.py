@@ -18,12 +18,12 @@ def instructions():
     print("**** Welcome to the Geometry Quiz ****")
     print()
     print("For each game you will be asked...")
-    print("- What question format would you like to do \n"
-          " '***Angles on a straight line or Angles in a triangle.***' \n"
-          " Computer will generate 4 geometry questions from the question format of your choice. \n"
-          " After you answer all 4 of your questions, the computer will mark your answers, \n"
+    print(" '*** Angles on a straight line or Angles in a triangle.***' \n"
+          " Computer will generate geometry questions. \n"
+          " You will have 2 question formats 1 will be angles on a straight line angles in a triangle. "
+          " After you answer all of your questions, the computer will mark your answers, \n"
           " you will then be given your quiz results.")
-    print(" If you would like to end the game before the end of your turn please enter xxx")
+    print("")
     print("*** Good Luck! :)  ***")
     print()
     print("press enter for INFINITE mode")

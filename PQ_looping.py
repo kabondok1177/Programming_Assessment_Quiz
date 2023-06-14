@@ -42,7 +42,7 @@ rounds_won = 0
 
 mode = "regular"
 
-rounds = int_check("How many rounds", 1, exit_code="")
+rounds = int_check("How many questions", 1, exit_code="")
 
 if rounds == "":
     mode = "infinite"
@@ -60,7 +60,7 @@ while end_game == "no":
 
     print(heading)
 
-    miss_is_awesome = input("End it?")
+    miss_is_awesome = input("To End it enter 'xxx'")
     if miss_is_awesome == "xxx":
         break
 

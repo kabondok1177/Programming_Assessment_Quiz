@@ -17,7 +17,7 @@ def int_check(question, low=None, high=None, exit_code=None):
         try:
             response = int(response)
 
-            # check that integer is valid (ie: not too low / too hig etc)
+            # check that integer is valid (ie: not too low / too high etc)
             if situation == "any integer":
                 return response
 
@@ -68,6 +68,12 @@ def instructions():
 
 questions_asked = 0
 rounds_won = 0
+played_before = yes_no("Have you played the "
+                       "game before? ")
+if played_before == "no":
+    instructions()
+
+    print("Program continues")
 
 mode = "regular"
 
