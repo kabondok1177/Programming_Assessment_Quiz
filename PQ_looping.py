@@ -60,7 +60,7 @@ while end_game == "no":
 
     print(heading)
 
-    miss_is_awesome = input("To End it enter 'xxx'")
+    miss_is_awesome = input("To end it enter 'xxx'")
     if miss_is_awesome == "xxx":
         break
 
