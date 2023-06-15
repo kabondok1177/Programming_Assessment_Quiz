@@ -19,7 +19,7 @@ def generate_question_format_1():
     noun2 = "banana"
     verb = "eat"
 
-    # Substitute the placeholders in the template with the generated words
+    # Substitute the placeholders in the template with the generated numbers
     question = template.format(noun=noun, noun2=noun2, verb=verb)
 
     return question
