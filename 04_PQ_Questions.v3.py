@@ -17,24 +17,24 @@ def generate_question_format_1():
     # Generate random nouns and other words
     noun = "triangle"
     noun2 = "angle"
-    noun3 = "55"
+    verb = "55"
 
     # Define a dictionary of possible answers
     answers = {
         " You have a {noun}, one {noun2} is 30, the other {noun2} is  ?": "The {noun} of {noun2} is a fruit.",
-        "Who {noun3 } {noun}?": f"People {noun3} {noun}.",
-        f"When did {noun} {noun3}?": f"{noun} {noun3} in the afternoon.",
-        f"Why is {noun} {noun3}?": f"{noun} is {noun3} because it's delicious.",
-        f"How does {noun} {noun3}?": f"{noun} {noun3} by using its mouth."
+        "Who {noun3 } {noun}?": f"People {verb} {noun}.",
+        f"When did {noun} {verb}?": f"{noun} {verb} in the afternoon.",
+        f"Why is {noun} {verb}?": f"{noun} is {verb} because it's delicious.",
+        f"How does {noun} {verb}?": f"{noun} {verb} by using its mouth."
     }
 
     # Substitute the placeholders in the template with the generated numbers
-    questions = template.format(noun=noun, noun2=noun2, noun3=noun3, noun4=noun4)
+    questions = template.format(noun=noun, noun2=noun2, verb=verb,)
 
     # Retrieve the corresponding answer
-    answer = answers[template]
+    answers = answers[template]
 
-    return questions, answer
+    return questions, answers
 
 
 # Generate a question and its answer
