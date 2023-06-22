@@ -3,7 +3,7 @@ import random
 while True:
     # Define a list of possible question templates
     templates = [
-        "triangle", "straight line"
+        "triangle", "straight line", "right angled triangle"
     ]
 
     # Select a random template
@@ -11,11 +11,29 @@ while True:
 
     # Generate random nouns and other words
     if template == "triangle":
-        angle_1 = random.randint(89.75)
-        angle_2 = random.randint(89.75) 
+        angle_1 = random.randint(1, 89)
+        angle_2 = random.randint(1, 89)
         answer = 180 - angle_1 - angle_2
 
         question = f"You have a triangle with angles {angle_2} and {angle_1}.  What is the third angle?"
         print("spoiler alert", answer)
 
     input()
+
+    if template == "straight line":
+        angle_1 = random.randint(1, 89)
+        angle_2 = random.randint(1, 89)
+        answer = 180 - angle_1 - angle_2
+
+        question = f"There are 2 angles on a straight line the angles are {angle_1} and {angle_2}. What would the " \
+                   f"third angle?"
+        print("spoiler alert", answer)
+
+    input()
+
+    if template == "right angled triangle":
+        right_angle = random.randint(90, 90)
+        angle_1 = random. randint(1, 89)
+        answer = 180 - right_angle - angle_1
+
+        question = f"You have a right angled triangle, one angle is {angle_1} and the right angle is  "
