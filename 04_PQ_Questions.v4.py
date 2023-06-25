@@ -25,15 +25,23 @@ while True:
         angle_2 = random.randint(1, 89)
         answer = 180 - angle_1 - angle_2
 
-        question = f"There are 2 angles on a straight line the angles are {angle_1} and {angle_2}. What would the " \
-                   f"third angle?"
+        question = f"There are 3 angles on a straight line two of the angles are {angle_1} and {angle_2}. What would " \
+                   f"the " \
+                   f"third angle be?"
         print("spoiler alert", answer)
 
     input()
 
     if template == "right angled triangle":
-        right_angle = random.randint(90, 90)
-        angle_1 = random. randint(1, 89)
+        right_angle = 90
+        angle_1 = random.randint(1, 89)
         answer = 180 - right_angle - angle_1
 
-        question = f"You have a right angled triangle, one angle is {angle_1} and the right angle is  "
+        question = f"You have a right angled triangle, one angle is {angle_1} and the right angle is {right_angle}" \
+                   f" what is your third angle?"
+        print("spoiler alert", answer)
+
+    input()
+
+
+
