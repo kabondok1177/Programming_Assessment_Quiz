@@ -43,6 +43,3 @@ while True:
         print("spoiler alert", answer)
 
     input()
-
-
-
