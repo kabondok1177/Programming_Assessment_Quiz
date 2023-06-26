@@ -21,9 +21,10 @@ while True:
     input()
 
     if template == "straight line":
-        angle_1 = random.randint(1, 89)
-        angle_2 = random.randint(1, 89)
-        answer = 180 - angle_1 - angle_2
+        total_angle = 180
+        angle_1 = random.randint(1, total_angle - 1)
+        angle_2 = total_angle - angle_1
+        answer = angle_2
 
         question = f"There are 3 angles on a straight line two of the angles are {angle_1} and {angle_2}. What would " \
                    f"the " \
