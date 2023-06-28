@@ -5,7 +5,7 @@ def int_check(question, low=None, high=None, exit_code=None):
     if low is None and high is None:
         error = "Please enter an integer"
         situation = "any integer"
-    if low is not None and high is not None:
+    elif low is not None and high is not None:
         error = f"Please enter an integer between {low} and {high}"
         situation = "both"
     else:
@@ -20,14 +20,12 @@ def int_check(question, low=None, high=None, exit_code=None):
         try:
             response = int(response)
 
-            # check that integer is valid (ie: not too low / too high etc)
+            # check that integer is valid (i.e., not too low / too high etc)
             if situation == "any integer":
                 return response
-
             elif situation == "both":
                 if low <= response <= high:
                     return response
-
             elif situation == "low only":
                 if response >= low:
                     return response
@@ -53,16 +51,16 @@ def instructions():
     print()
     print("**** Welcome to the Geometry Quiz ****")
     print()
-    print("For each game you will be asked...")
+    print("For each game, you will be asked...")
     print("- What question format would you like to do \n"
           " '***Angles on a straight line or Angles in a triangle.***' \n"
           " Computer will generate geometry questions from the question format of your choice. \n"
           " After you answer all of your questions, the computer will mark your answers, \n"
           " you will then be given your quiz results.")
-    print(" If you would like to end the game before the end of your turn please enter xxx")
+    print(" If you would like to end the game before the end of your turn, please enter xxx")
     print("*** Good Luck! :)  ***")
     print()
-    print("press enter for INFINITE mode")
+    print("Press enter for INFINITE mode")
     return ""
 
 
@@ -77,7 +75,7 @@ if played_before == "no":
 
 mode = "regular"
 
-rounds = int_check("How many questions", 1, exit_code="")
+rounds = int_check("How many questions: ", low=1, exit_code="")
 
 if rounds == "":
     mode = "infinite"
@@ -98,7 +96,7 @@ while end_game == "no":
     questions_asked += 1
 
     # check if we are out of rounds
-    if questions_asked >= rounds:
+    if questions_asked > rounds:
         break
 
     # Define a list of possible question templates
@@ -108,7 +106,7 @@ while end_game == "no":
 
     # Select a random template
     template = random.choice(templates)
-    print("chosen template", template)
+    print("chosen template:", template)
 
     # Generate random nouns and other words
     if template == "triangle":
@@ -116,10 +114,14 @@ while end_game == "no":
         angle_2 = random.randint(1, 89)
         answer = 180 - angle_1 - angle_2
 
-        question = f"You have a triangle with angles {angle_2} and {angle_1}.  What is the third angle?"
-        print("spoiler alert", answer)
-
-    input()
+        question = f"You have a triangle with angles {angle_1} and {angle_2}. What is the third angle?"
+        print("Question:", question)
+        user_answer = int(input("Your answer: "))
+        if user_answer == answer:
+            print("Correct!")
+            rounds_won += 1
+        else:
+            print(f"Sorry, the correct answer is {answer}.")
 
     if template == "straight line":
         total_angle = 180
@@ -127,19 +129,32 @@ while end_game == "no":
         angle_2 = total_angle - angle_1
         answer = angle_2
 
-        question = f"There are 3 angles on a straight line two of the angles are {angle_1} and {angle_2}. What would " \
-                   f"the third angle be?"
-        print("spoiler alert", answer)
-
-    input()
+        question = f"There are 3 angles on a straight line. Two of the angles are {angle_1} and {angle_2}. " \
+                   f"What would the third angle be?"
+        print("Question:", question)
+        user_answer = int(input("Your answer: "))
+        if user_answer == answer:
+            print("Correct!")
+            rounds_won += 1
+        else:
+            print(f"Sorry, the correct answer is {answer}.")
 
     if template == "right angled triangle":
         right_angle = 90
         angle_1 = random.randint(1, 89)
         answer = 180 - right_angle - angle_1
 
-        question = f"You have a right angled triangle, one angle is {angle_1} and the right angle is {right_angle}" \
-                   f" what is your third angle?"
-        print("spoiler alert", answer)
+        question = f"You have a right angled triangle. One angle is {angle_1} and the right angle is {right_angle}. " \
+                   f"What is your third angle?"
+        print("Question:", question)
+        user_answer = int(input("Your answer: "))
+        if user_answer == answer:
+            print("Correct!")
+            rounds_won += 1
+        else:
+            print(f"Sorry, the correct answer is {answer}.")
 
-    input()
+    print()  # Empty line between questions
+
+print(f"\nYou won {rounds_won} out of {questions_asked} rounds.")
+
