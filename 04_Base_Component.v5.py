@@ -71,7 +71,7 @@ played_before = yes_no("Have you played the game before? ")
 if played_before == "no":
     instructions()
 
-    print("Program continues")
+print("Program continues")
 
 mode = "regular"
 
@@ -116,7 +116,7 @@ while end_game == "no":
 
         question = f"You have a triangle with angles {angle_1} and {angle_2}. What is the third angle?"
         print("Question:", question)
-        user_answer = int(input("Your answer: "))
+        user_answer = int_check("Your answer: ")
         if user_answer == answer:
             print("Correct!")
             rounds_won += 1
@@ -127,12 +127,13 @@ while end_game == "no":
         total_angle = 180
         angle_1 = random.randint(1, total_angle - 1)
         angle_2 = total_angle - angle_1
-        answer = angle_2
+        answer = 180 - angle_1 - angle_2
 
-        question = f" There is a triangle on a straight line. Two of the angles are {angle_1} and {angle_2}. " \
+        question = f"There is a triangle on a straight line. One of the ange is {angle_1} and the second angle is" \
+                   f" {angle_2}. " \
                    f"What would the third angle be?"
         print("Question:", question)
-        user_answer = int(input("Your answer: "))
+        user_answer = int_check("Your answer: ")
         if user_answer == answer:
             print("Correct!")
             rounds_won += 1
@@ -147,7 +148,7 @@ while end_game == "no":
         question = f"You have a right angled triangle. One angle is {angle_1} and the right angle is {right_angle}. " \
                    f"What is your third angle?"
         print("Question:", question)
-        user_answer = int(input("Your answer: "))
+        user_answer = int_check("Your answer: ")
         if user_answer == answer:
             print("Correct!")
             rounds_won += 1
@@ -157,4 +158,3 @@ while end_game == "no":
     print()  # Empty line between questions
 
 print(f"\n You answered {rounds_won} right out of {questions_asked} rounds.")
-
