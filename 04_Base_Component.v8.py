@@ -88,6 +88,10 @@ if rounds == "":
 # Rounds loop
 end_game = False
 while True:
+    # Check if we are out of rounds
+    if not mode == "infinite" and questions_asked >= rounds:
+        break
+
     if mode == "infinite":
         heading = f"Round {questions_asked + 1} (infinite mode)"
     else:
@@ -96,10 +100,6 @@ while True:
     print(heading)
 
     questions_asked += 1
-
-    # Check if we are out of rounds
-    if not mode == "infinite" and questions_asked > rounds:
-        break
 
     # Define a list of possible question templates
     templates = [
