@@ -54,10 +54,10 @@ def instructions():
     print("For each game, you will be asked...")
     print("- What question format would you like to do \n"
           " '***Angles on a straight line or Angles in a triangle.***' \n"
-          " Computer will generate geometry questions from the question format of your choice. \n"
+          " Computer will generate geometry questions from the 3 question formats. \n"
           " After you answer all of your questions, the computer will mark your answers, \n"
           " you will then be given your quiz results.")
-    print(" If you would like to end the game before the end of your turn, please enter xxx")
+    print(" If you would like to end the game before the end of your turn, please enter 'xxx'")
     print("*** Good Luck! :)  ***")
     print()
     print("Press enter for INFINITE mode")
@@ -121,11 +121,12 @@ while True:
         else:
             print(f"Sorry, the correct answer is {answer}.")
 
-    if template == "straight line":
-        total_angle = 180
-        angle_1 = random.randint(1, total_angle - 1)
-        angle_2 = total_angle - angle_1
-        answer = 180 - angle_1 - angle_2
+
+        if template == "straight line":
+            total_angle = 180
+            angle_1 = random.randint(1, total_angle - 1)
+            angle_2 = total_angle - angle_1
+            answer = total_angle - angle_1 - angle_2
 
         question = f"There is a triangle on a straight line. One of the angle is {angle_1} and the second angle is" \
                    f" {angle_2}. " \
@@ -161,4 +162,4 @@ while True:
 
 print("**** GAME SUMMARY**** "
       f"\nYou answered {rounds_won} correctly out of {questions_asked} rounds."
-      f"Well done on completing the Geomarty Quiz")
+      f"Well done on completing the Geomerty Quiz")
