@@ -60,7 +60,6 @@ def instructions():
           " Computer will generate geometry questions from the 3 question formats. \n"
           " After you answer all of your questions, the computer will mark your answers, \n"
           " you will then be given your quiz results.")
-    print(" If you would like to end the game before the end of your turn, please enter 'xxx'")
     print("*** Good Luck! :)  ***")
     print()
     print("Press enter for INFINITE mode")
@@ -160,10 +159,12 @@ while True:
 
     print()  # Empty line between questions
 
-    end_game = input("Enter 'xxx' to end the game, or press Enter to continue: ").lower()
+    if questions_asked != rounds:
+        end_game = input("Press Enter to continue or enter 'xxx' to end the game: ").lower()
+
     if end_game == "xxx":
         break
 
 print("**** GAME SUMMARY**** "
       f"\nYou answered {rounds_won} correctly out of {questions_asked} rounds."
-      f"Well done on completing the Geometry Quiz")
+      f" Well done on completing the Geometry Quiz")
